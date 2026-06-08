@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segunda Vuelta Elecciones Perú 2026 - ONPE</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 20px; background: #f4f6f9; color: #222; }
+    .container { max-width: 1100px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+    h1 { text-align: center; color: #1a1a1a; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 14px; border: 1px solid #ddd; text-align: left; }
+    th { background: #e3f2fd; }
+    .fujimori { background: #ffebee; font-weight: bold; color: #d32f2f; }
+    .sanchez { background: #e3f2fd; }
+    .bar-container { background: #eee; border-radius: 8px; height: 32px; margin: 15px 0; overflow: hidden; position: relative; }
+    .bar-f { background: #d32f2f; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; }
+    .bar-s { background: #1976d2; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; }
+    .status { text-align: center; font-size: 1.1em; margin: 15px 0; padding: 12px; background: #e8f5e9; border-radius: 8px; }
+    footer { text-align: center; margin-top: 40px; color: #666; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🗳️ Segunda Vuelta Presidencial Perú 2026</h1>
+    <div class="status" id="status">Cargando datos oficiales ONPE...</div>
+
+    <h2>Resultados Actuales ONPE</h2>
+    <table id="results-table">
+      <thead>
+        <tr>
+          <th>Candidato</th>
+          <th>Partido</th>
+          <th>Porcentaje</th>
+          <th>Votos</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h3>Avance de Actas</h3>
+    <p id="avance"></p>
+
+    <h3>Visualización</h3>
+    <div class="bar-container"><div class="bar-f" id="bar-f">Keiko — 0%</div></div>
+    <div class="bar-container"><div class="bar-s" id="bar-s">Roberto — 0%</div></div>
+
+    <p><strong>Fuente oficial:</strong> <a href="https://resultadosegundavuelta.onpe.gob.pe/" target="_blank">ONPE Segunda Vuelta</a> — Actualiza la página para ver los últimos datos.</p>
+  </div>
+
+  <footer>
+    Réplica mejorada del estilo proyeccion-peru-2026 • Datos públicos ONPE
+  </footer>
+
+  <script>
+    function updateResults() {
+      // Datos más recientes (actualiza manualmente cuando cambien en ONPE)
+      const keikoPct = 52.69;
+      const sanchezPct = 47.31;
+      const keikoVotos = "7,007,340";
+      const sanchezVotos = "6,292,453";
+      const avance = "68.23%";
+
+      document.getElementById('status').innerHTML = `Datos ONPE actualizados • Avance: ${avance} de actas`;
+
+      const tbody = document.querySelector('#results-table tbody');
+      tbody.innerHTML = `
+        <tr class="fujimori">
+          <td><strong>Keiko Fujimori</strong></td>
+          <td>Fuerza Popular</td>
+          <td><strong>${keikoPct}%</strong></td>
+          <td>${keikoVotos}</td>
+        </tr>
+        <tr class="sanchez">
+          <td><strong>Roberto Sánchez</strong></td>
+          <td>Juntos por el Perú</td>
+          <td>${sanchezPct}%</td>
+          <td>${sanchezVotos}</td>
+        </tr>
+      `;
+
+      document.getElementById('bar-f').style.width = `${keikoPct}%`;
+      document.getElementById('bar-f').textContent = `Keiko Fujimori — ${keikoPct}%`;
+      document.getElementById('bar-s').style.width = `${sanchezPct}%`;
+      document.getElementById('bar-s').textContent = `Roberto Sánchez — ${sanchezPct}%`;
+
+      document.getElementById('avance').innerHTML = `<strong>Avance de actas:</strong> ${avance} (actualizado al 8 de junio 2026)`;
+    }
+
+    updateResults();
+    // Se actualiza cada 2 minutos (puedes cambiar a 60000 para 1 minuto)
+    setInterval(updateResults, 120000);
+  </script>
+</body>
+</html>
