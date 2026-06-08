@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Proyección Electoral Perú 2026</title>
+
+<style>
+
+  :root{
+
+    --bg:#0b1220;
+
+    --card:#111a2e;
+
+    --text:#e9eefc;
+
+    --muted:#a9b4d0;
+
+    --red:#ff4d4d;
+
+    --blue:#3b82f6;
+
+    --border:rgba(255,255,255,0.08);
+
+  }
+
+  body{
+
+    margin:0;
+
+    font-family: system-ui, -apple-system, sans-serif;
+
+    background: linear-gradient(180deg,#070b14,#0b1220);
+
+    color:var(--text);
+
+  }
+
+  .container{
+
+    max-width:1100px;
+
+    margin:40px auto;
+
+    padding:20px;
+
+  }
+
+  header{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+  }
+
+  header h1{
+
+    margin:0;
+
+    font-size:28px;
+
+  }
+
+  header p{
+
+    color:var(--muted);
+
+  }
+
+  .grid{
+
+    display:grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap:20px;
+
+  }
+
+  .card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    padding:20px;
+
+  }
+
+  .candidate{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:12px 0;
+
+    border-bottom:1px solid var(--border);
+
+  }
+
+  .candidate:last-child{
+
+    border:none;
+
+  }
+
+  .name{
+
+    font-weight:600;
+
+  }
+
+  .percent{
+
+    font-weight:700;
+
+  }
+
+  .bar{
+
+    height:10px;
+
+    background:#1f2a44;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    margin-top:6px;
+
+  }
+
+  .fill-red{
+
+    height:100%;
+
+    width:52.7%;
+
+    background:var(--red);
+
+  }
+
+  .fill-blue{
+
+    height:100%;
+
+    width:47.3%;
+
+    background:var(--blue);
+
+  }
+
+  table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+  }
+
+  th,td{
+
+    padding:10px;
+
+    border-bottom:1px solid var(--border);
+
+    text-align:left;
+
+    color:var(--text);
+
+  }
+
+  th{
+
+    color:var(--muted);
+
+    font-weight:500;
+
+  }
+
+  .footer{
+
+    text-align:center;
+
+    margin-top:30px;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+  }
+
+  @media(max-width:800px){
+
+    .grid{
+
+      grid-template-columns:1fr;
+
+    }
+
+  }
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+  <h1>🗳️ Proyección Electoral Perú 2026</h1>
+
+  <p>Actualización en tiempo real • Datos de simulación</p>
+
+</header>
+
+<div class="grid">
+
+  <!-- RESULTADOS -->
+
+  <div class="card">
+
+    <h2>Resultados Presidenciales</h2>
+
+    <div class="candidate">
+
+      <div class="name">Keiko Fujimori</div>
+
+      <div class="percent">52.7%</div>
+
+    </div>
+
+    <div class="bar"><div class="fill-red"></div></div>
+
+    <div class="candidate">
+
+      <div class="name">Roberto Sánchez</div>
+
+      <div class="percent">47.3%</div>
+
+    </div>
+
+    <div class="bar"><div class="fill-blue"></div></div>
+
+  </div>
+
+  <!-- RESUMEN -->
+
+  <div class="card">
+
+    <h2>Resumen</h2>
+
+    <table>
+
+      <tr><th>Avance</th><td>100%</td></tr>
+
+      <tr><th>Votos válidos</th><td>≈ 11,820,000</td></tr>
+
+      <tr><th>Diferencia</th><td>≈ 640,000</td></tr>
+
+      <tr><th>Estado</th><td>En espera de proclamación</td></tr>
+
+    </table>
+
+  </div>
+
+</div>
+
+<div class="footer">
+
+  Diseño tipo dashboard electoral • Datos de demostración (no oficiales)
+
+</div>
+
+</div>
+
+</body>
+
+</html>
